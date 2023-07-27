@@ -1,11 +1,11 @@
 
 import { useState } from "react"
 import PasoOneComepleted from './PasoOneCompletd'
-import BarraDePasos from '../BarraDePasos'
 
-function PasoOne({cambio}) {
 
-    
+function PasoOne({ Shouw, setShouw}) {
+
+  
 
     const [formData, setFormData] = useState({
         email: '',
@@ -15,13 +15,12 @@ function PasoOne({cambio}) {
         telefono: '',
       })
 
-    const [Shouw, setShouw] = useState(true)
+   
 
 const formus = e => {
     e.preventDefault()
     console.log(formData)
-    setShouw(!Shouw);
-    cambio()
+    setShouw(!Shouw)
   
 }
 
@@ -36,10 +35,13 @@ const captura = (e) => {
   return (
 
     <>
-    <BarraDePasos Shouw={Shouw}/>
+    
     {
-        Shouw ? <>
-        <div className="caja w-[751px] h-[580px] border-[4px] border-t-[#fc5305] grid place-items-center">
+        Shouw ? <PasoOneComepleted  formData={formData} setShouw={setShouw} Shouw={Shouw}/>
+
+         : <>
+         
+         <div className="caja w-[751px] h-[580px] border-[4px] border-t-[#fc5305] grid place-items-center">
         <div className="caja-2 w-[90%] h-[90%]  flex flex-col">
 
         <div className="flex gap-2 items-center py-2">
@@ -92,8 +94,10 @@ const captura = (e) => {
         </form>
         </div>
     </div>
-
-        </> : <PasoOneComepleted cambio={cambio} formData={formData} setShouw={setShouw} Shouw={Shouw}/>
+         </>
+        
+        
+        
     }
     </>
 

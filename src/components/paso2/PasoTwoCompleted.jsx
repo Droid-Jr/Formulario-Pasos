@@ -1,9 +1,10 @@
 import PasoTwoFinal from "./PasoTwoFinal"
 
-function PasoTwoCompleted({TwoFinis, setTwoFinis}) {
+function PasoTwoCompleted({TwoFinis, setTwoFinis ,setBarraTeo,}) {
 
     const cambi =  () => {
         setTwoFinis(!TwoFinis)
+        setBarraTeo(true)
     }
 
   return (
@@ -47,7 +48,7 @@ function PasoTwoCompleted({TwoFinis, setTwoFinis}) {
 
     </div>
         
-        </>  : <PasoTwoFinal cambi={cambi}/>
+        </>  : <PasoTwoFinal cambi={cambi} setBarraTeo={setBarraTeo}/>
     }
 
     </>

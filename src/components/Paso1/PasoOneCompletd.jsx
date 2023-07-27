@@ -1,8 +1,8 @@
-function PasoOneCompletd( {formData, setShouw,Shouw,cambio}) {
+function PasoOneCompletd( {formData, setShouw,Shouw}) {
 
   const open = () => {
     setShouw(!Shouw)
-    cambio()
+    
   }
 
   return (

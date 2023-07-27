@@ -2,16 +2,15 @@ import PasoThreeFormu from "./PasoThreeFormu"
 
 function PasoThree({TwoFinis, setTwoFinis,Reci}) {
 
-const cambio = () => {
-  setTwoFinis(!TwoFinis)
-}
+
 
   return (
 
     <>
     
     {
-      !TwoFinis ? <>
+      TwoFinis ? <PasoThreeFormu Reci={Reci}/> :
+      <>
       
       <div className="w-[50%] py-16">
       <div className="flex items-center gap-3 w-[90%] h-[80%] m-auto ">
@@ -20,7 +19,7 @@ const cambio = () => {
       </div>
   </div>
       
-      </> : <PasoThreeFormu Reci={Reci}/>
+      </>
     }
     
     </>

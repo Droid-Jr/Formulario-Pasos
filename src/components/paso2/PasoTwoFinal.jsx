@@ -1,6 +1,9 @@
-function PasoTwoFinal({cambi}) {
+function PasoTwoFinal({cambi,setBarraTeo}) {
 
-
+const proceso = ()=>{
+    cambi()
+    setBarraTeo(false)
+}
     
   return (
 
@@ -16,7 +19,7 @@ function PasoTwoFinal({cambi}) {
                 </div>
 
                 <div className="font-medium">
-                    <button onClick={() => cambi()} >Editar</button>
+                    <button onClick={proceso} >Editar</button>
                 </div>
             </article>
 
